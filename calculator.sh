@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Welcome to the Simple Calculator!"
-
+echo "hope you enjoy it!"
 echo "Please enter the first number:"
 read num1
 
