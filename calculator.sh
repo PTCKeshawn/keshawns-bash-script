@@ -1,13 +1,18 @@
 #!/bin/bash
 
 echo "Welcome to the Simple Calculator!"
+sleep 2
 echo "hope you enjoy it!"
+sleep 2
 echo "Please enter the first number:"
 read num1
 
 echo "Please enter the operation (+, -, *, /):"
 read operation
 
+if [[ "$operation" -ne "+","-","*","/" ]]; then
+	echo"invalid operation"
+	exit 1 
 echo "Please enter the second number:"
 read num2
 
@@ -19,9 +24,12 @@ elif [[ "$operation" == "*" ]]; then
     result=$((num1 * num2))
 elif [[ "$operation" == "/" ]]; then
     if [[ "$num2" -eq 0 ]]; then
-        echo "Error: Division by zero is not allowed."
+		echo "Error: Division by zero is not allowed."
+	fi
+else
+	echo "Invalid operation. Please use +, -, *, or /."
         exit 1
-    fi
+fi
     result=$((num1 / num2))
 else
     echo "Invalid operation. Please use +, -, *, or /."
