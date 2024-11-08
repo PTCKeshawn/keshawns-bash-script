@@ -37,6 +37,7 @@ display_result() {
 }
 
 display_result
+sleep 1
 
 while true; do
     echo "Would you like to perform another calculation? (yes/no)"
@@ -70,7 +71,7 @@ while true; do
         fi
 
         display_result
-
+sleep 1
     elif [[ "$answer" == "no" ]]; then
         echo "Thank you for using the calculator!"
         break
