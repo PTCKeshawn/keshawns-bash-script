@@ -10,9 +10,11 @@ read num1
 echo "Please enter the operation (+, -, *, /):"
 read operation
 
-if [[ "$operation" -ne "+","-","*","/" ]]; then
-	echo"invalid operation"
-	exit 1 
+if [[ "$operation" != "+" && "$operation" != "-" && "$operation" != "*" && "$operation" != "/" ]]; then
+    echo "Invalid operation. Please use +, -, *, or /."
+    exit 1
+fi
+
 echo "Please enter the second number:"
 read num2
 
@@ -24,16 +26,10 @@ elif [[ "$operation" == "*" ]]; then
     result=$((num1 * num2))
 elif [[ "$operation" == "/" ]]; then
     if [[ "$num2" -eq 0 ]]; then
-		echo "Error: Division by zero is not allowed."
-	fi
-else
-	echo "Invalid operation. Please use +, -, *, or /."
-        exit 1
-fi
+	echo "Error: Division by zero is not allowed."
+	exit 1
+	fi	
     result=$((num1 / num2))
-else
-    echo "Invalid operation. Please use +, -, *, or /."
-    exit 1
 fi
 
 display_result() {
@@ -84,4 +80,3 @@ while true; do
 done
 
 exit 0
-
